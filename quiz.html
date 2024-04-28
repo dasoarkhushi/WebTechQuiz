@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quizApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS QUIZ GAME</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="quizController">
+    <div class="App">
+      <h1>Web Tech Quiz 01</h1>
+      <div class="quiz">
+        <h2 id="questions">
+          Which of the following CSS Property sets the pace of the transition to
+          the next keyframe, as described in the previous section?
+        </h2>
+        <div id="answer-buttons">
+          <button class="button">animation-pace-function</button>
+          <button class="button">none of the above</button>
+          <button class="button">animation-transition-function</button>
+          <button class="button">animation-timing-function</button>
+          <div>
+            <button id="next">Next</button>
+          </div>
+        </div>
+      </div>
+      <button ng-click="showAlert()" class="finish-button">Finish Quiz</button>
+    </div>
+
+    <script>
+      angular
+        .module("quizApp", [])
+        .controller("quizController", function ($scope, $window) {
+          $scope.showAlert = function () {
+            $window.alert("Thank you for taking the quiz!");
+          };
+        });
+    </script>
+  </body>
+</html>
